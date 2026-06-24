@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Jobs</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            JobPortal
+        </div>
+
+        <div class="nav-right">
+
+            <span id="userEmail"></span>
+
+            <a href="my-applications.html">
+                My Applications
+            </a>
+
+            <button onclick="logout()" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+    <section class="jobs-section">
+
+        <h1>Find Your Dream Job 🚀</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search jobs, companies..."
+            onkeyup="searchJobs()"
+            class="search-box">
+
+        <div id="jobsContainer"></div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/jobs.js"></script>
+
+</body>
+
+</html>
