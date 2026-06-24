@@ -66,7 +66,7 @@ async function loadJobs() {
 
             <button
                 class="apply-btn"
-                onclick="applyJob(${job.id})">
+               onclick="openApplyForm(${job.id})"
 
                 Apply Now
 

@@ -1,5 +1,15 @@
-.auth-container{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    width:100%;
     height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -11,11 +21,21 @@
     );
 }
 
+.auth-container{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .auth-card{
 
-    width:400px;
+    width:420px;
 
-    background:white;
+    background:#fff;
 
     padding:40px;
 
@@ -24,17 +44,32 @@
     text-align:center;
 
     box-shadow:
-    0 15px 30px rgba(0,0,0,.2);
+    0 15px 40px rgba(0,0,0,0.2);
 
-    animation:slideUp .7s ease;
+    animation:fadeIn 0.7s ease;
 }
 
 .auth-card h1{
+
+    color:#1e293b;
+
     margin-bottom:10px;
+
+    font-size:32px;
 }
 
-.auth-card p{
-    color:#666;
+.subtitle{
+
+    color:#64748b;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+}
+
+.auth-card form{
+
+    width:100%;
 }
 
 .auth-card input{
@@ -43,11 +78,25 @@
 
     padding:15px;
 
-    margin:12px 0;
+    margin:10px 0;
+
+    border:1px solid #ddd;
 
     border-radius:10px;
 
-    border:1px solid #ddd;
+    font-size:16px;
+
+    transition:0.3s;
+}
+
+.auth-card input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:
+    0 0 10px rgba(37,99,235,0.3);
 }
 
 .auth-card button{
@@ -55,6 +104,8 @@
     width:100%;
 
     padding:15px;
+
+    margin-top:10px;
 
     border:none;
 
@@ -68,18 +119,42 @@
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .auth-card button:hover{
-    transform:scale(1.03);
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
 }
 
-@keyframes slideUp{
+.bottom-text{
+
+    margin-top:20px;
+
+    color:#64748b;
+}
+
+.bottom-text a{
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:bold;
+}
+
+.bottom-text a:hover{
+
+    text-decoration:underline;
+}
+
+@keyframes fadeIn{
 
     from{
         opacity:0;
-        transform:translateY(50px);
+        transform:translateY(30px);
     }
 
     to{
@@ -87,120 +162,17 @@
         transform:translateY(0);
     }
 }
-.jobs-section{
-    width:90%;
-    margin:auto;
-    padding:30px;
-}
-
-.jobs-section h1{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.search-box{
+textarea{
 
     width:100%;
+
     padding:15px;
-    border-radius:10px;
-    border:1px solid #ddd;
-
-    margin-bottom:30px;
-}
-
-.nav-right{
-
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.nav-right a{
-    color:white;
-    text-decoration:none;
-}
-
-.job-card{
-
-    background:white;
-
-    margin-bottom:20px;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.1);
-
-    transition:.3s;
-}
-
-.job-card:hover{
-
-    transform:
-    translateY(-5px);
-}
-
-.job-header{
-
-    display:flex;
-
-    justify-content:
-    space-between;
-
-    align-items:center;
-}
-
-.salary{
-
-    background:#dcfce7;
-
-    color:#15803d;
-
-    padding:8px 12px;
-
-    border-radius:20px;
-}
-
-.apply-btn{
-
-    background:#2563eb;
-
-    color:white;
-
-    border:none;
-
-    padding:12px 20px;
-
-    border-radius:10px;
-
-    cursor:pointer;
 
     margin-top:10px;
-}
 
-.apply-btn:hover{
+    border:1px solid #ddd;
 
-    background:#1d4ed8;
-}
+    border-radius:10px;
 
-.logout-btn{
-
-    background:#ef4444;
-
-    color:white;
-
-    border:none;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-}
-
-.logout-btn:hover{
-
-    background:#dc2626;
+    resize:none;
 }
