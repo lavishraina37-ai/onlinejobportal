@@ -1,57 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Jobs</title>
+    <title>Available Jobs | Job Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
-</head>
 
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
 <body>
 
-    <nav class="navbar">
+<!-- ================= NAVBAR ================= -->
 
-        <div class="logo">
-            JobPortal
-        </div>
+<nav class="navbar">
 
-        <div class="nav-right">
+    <div class="logo">
+        <i class="fa-solid fa-briefcase"></i> JobPortal
+    </div>
 
-            <span id="userEmail"></span>
+    <ul class="nav-links">
 
-            <a href="my-applications.html">
-                My Applications
-            </a>
+        <li><a href="index.html">Home</a></li>
 
-            <button onclick="logout()" class="logout-btn">
-                Logout
-            </button>
+        <li><a href="jobs.html">Jobs</a></li>
 
-        </div>
+        <li><a href="apply.html">Apply</a></li>
 
-    </nav>
+        <li><a href="my-applications.html">My Applications</a></li>
 
-    <section class="jobs-section">
+        <li><a href="login.html">Logout</a></li>
 
-        <h1>Find Your Dream Job 🚀</h1>
+    </ul>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search jobs, companies..."
-            onkeyup="searchJobs()"
-            class="search-box">
+</nav>
 
-        <div id="jobsContainer"></div>
+<!-- ================= HEADER ================= -->
 
-    </section>
+<section class="jobs-section">
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="js/supabase.js"></script>
-    <script src="js/jobs.js"></script>
+<h1>Available Jobs</h1>
+
+<p>Choose your dream job and apply instantly.</p>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Jobs..."
+class="search-box"
+onkeyup="searchJobs()">
+
+</section>
+
+<!-- ================= JOBS ================= -->
+
+<section class="jobs-grid" id="jobsContainer">
+
+<div class="job-card">
+
+<i class="fa-solid fa-laptop-code fa-3x"></i>
+
+<h2>Software Developer</h2>
+
+<p><b>Company:</b> Infosys</p>
+
+<p><b>Location:</b> Bangalore</p>
+
+<p><b>Salary:</b> ₹6 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+<div class="job-card">
+
+<i class="fa-solid fa-code fa-3x"></i>
+
+<h2>Frontend Developer</h2>
+
+<p><b>Company:</b> TCS</p>
+
+<p><b>Location:</b> Hyderabad</p>
+
+<p><b>Salary:</b> ₹5 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+<div class="job-card">
+
+<i class="fa-solid fa-database fa-3x"></i>
+
+<h2>Backend Developer</h2>
+
+<p><b>Company:</b> Wipro</p>
+
+<p><b>Location:</b> Pune</p>
+
+<p><b>Salary:</b> ₹7 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+<div class="job-card">
+
+<i class="fa-solid fa-building-columns fa-3x"></i>
+
+<h2>Bank Clerk</h2>
+
+<p><b>Company:</b> SBI</p>
+
+<p><b>Location:</b> Delhi</p>
+
+<p><b>Salary:</b> ₹4.5 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+<div class="job-card">
+
+<i class="fa-solid fa-user-shield fa-3x"></i>
+
+<h2>Police Constable</h2>
+
+<p><b>Department:</b> Government</p>
+
+<p><b>Location:</b> Chandigarh</p>
+
+<p><b>Salary:</b> ₹5 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+<div class="job-card">
+
+<i class="fa-solid fa-graduation-cap fa-3x"></i>
+
+<h2>Assistant Professor</h2>
+
+<p><b>College:</b> Government College</p>
+
+<p><b>Location:</b> Punjab</p>
+
+<p><b>Salary:</b> ₹8 LPA</p>
+
+<a href="apply.html" class="apply-btn">
+Apply Now
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Online Job Portal | Developed by Lavish Sharma
+
+</p>
+
+</footer>
+
+<script src="js/jobs.js"></script>
 
 </body>
-
 </html>
