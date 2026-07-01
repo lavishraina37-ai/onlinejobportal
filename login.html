@@ -1,55 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Job Portal</title>
+
+    <title>Login | Online Job Portal</title>
+
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body>
 
-    <div class="auth-container">
+<body class="login-page">
 
-        <div class="auth-card">
+<div class="login-overlay">
 
-            <h1>Welcome Back 👋</h1>
+<div class="auth-container">
 
-            <p class="subtitle">
-                Login to continue
-            </p>
+<div class="auth-card">
 
-            <form id="loginForm">
+<h1>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="📧 Enter Email"
-                    required>
+<i class="fa-solid fa-user-lock"></i>
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="🔒 Enter Password"
-                    required>
+Welcome Back
 
-                <button type="submit">
-                    Login
-                </button>
+</h1>
 
-            </form>
+<p class="subtitle">
 
-            <p class="bottom-text">
-                Don't have an account?
-                <a href="register.html">Register</a>
-            </p>
+Login to continue your journey.
 
-        </div>
+</p>
 
-    </div>
+<form id="loginForm">
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="js/supabase.js"></script>
-    <script src="js/login.js"></script>
+<div class="input-group">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email"
+required>
+
+</div>
+
+<div class="input-group">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+required>
+
+<i class="fa-solid fa-eye toggle-password"
+onclick="togglePassword()"></i>
+
+</div>
+
+<div class="login-options">
+
+<label>
+
+<input type="checkbox">
+
+Remember Me
+
+</label>
+
+<a href="#" onclick="forgotPassword()">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button type="submit" id="loginBtn">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+<div id="loader" style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Logging in...
+
+</div>
+
+</form>
+
+<p class="bottom-text">
+
+Don't have an account?
+
+<a href="register.html">
+
+Register Now
+
+</a>
+
+</p>
+
+<a href="index.html" class="home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+const password=document.getElementById("password");
+
+if(password.type==="password"){
+
+password.type="text";
+
+}else{
+
+password.type="password";
+
+}
+
+}
+
+function forgotPassword(){
+
+alert("Password reset feature will be added.");
+
+}
+
+document.getElementById("loginForm").addEventListener("submit",function(){
+
+document.getElementById("loader").style.display="block";
+
+document.getElementById("loginBtn").style.display="none";
+
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/login.js"></script>
 
 </body>
+
 </html>
