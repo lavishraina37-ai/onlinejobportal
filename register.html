@@ -1,55 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Job Portal</title>
-    <link rel="stylesheet" href="css/style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | Online Job Portal</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body>
 
-    <div class="auth-container">
+<body class="login-page">
 
-        <div class="auth-card">
+<div class="login-overlay">
 
-            <h1>Create Account 🚀</h1>
+<div class="auth-container">
 
-            <p class="subtitle">
-                Join the Job Portal and start your career
-            </p>
+<div class="auth-card">
 
-            <form id="registerForm">
+<h1>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="📧 Enter Email"
-                    required>
+<i class="fa-solid fa-user-plus"></i>
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="🔒 Enter Password"
-                    required>
+Create Account
 
-                <button type="submit">
-                    Register
-                </button>
+</h1>
 
-            </form>
+<p class="subtitle">
 
-            <p class="bottom-text">
-                Already have an account?
-                <a href="login.html">Login</a>
-            </p>
+Join the Online Job Portal and start your career today.
 
-        </div>
+</p>
 
-    </div>
+<form id="registerForm">
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="js/supabase.js"></script>
-    <script src="js/register.js"></script>
+<div class="input-group">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+id="fullname"
+placeholder="Full Name"
+required>
+
+</div>
+
+<div class="input-group">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-group">
+
+<i class="fa-solid fa-phone"></i>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+maxlength="10"
+required>
+
+</div>
+
+<div class="input-group">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<i class="fa-solid fa-eye toggle-password"
+onclick="togglePassword('password')"></i>
+
+</div>
+
+<small id="strength"></small>
+
+<div class="input-group">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password"
+required>
+
+<i class="fa-solid fa-eye toggle-password"
+onclick="togglePassword('confirmPassword')"></i>
+
+</div>
+
+<label class="terms">
+
+<input type="checkbox" required>
+
+I agree to the Terms & Conditions
+
+</label>
+
+<button type="submit" id="registerBtn">
+
+<i class="fa-solid fa-user-check"></i>
+
+Create Account
+
+</button>
+
+<div id="loader" style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Creating Account...
+
+</div>
+
+</form>
+
+<p class="bottom-text">
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</p>
+
+<a href="index.html" class="home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(id){
+
+let password=document.getElementById(id);
+
+if(password.type==="password"){
+
+password.type="text";
+
+}else{
+
+password.type="password";
+
+}
+
+}
+
+document.getElementById("password").addEventListener("keyup",function(){
+
+let pass=this.value;
+
+let strength=document.getElementById("strength");
+
+if(pass.length<6){
+
+strength.innerHTML="Weak Password";
+
+strength.style.color="red";
+
+}
+
+else if(pass.length<10){
+
+strength.innerHTML="Medium Password";
+
+strength.style.color="orange";
+
+}
+
+else{
+
+strength.innerHTML="Strong Password";
+
+strength.style.color="green";
+
+}
+
+});
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+
+let pass=document.getElementById("password").value;
+
+let confirm=document.getElementById("confirmPassword").value;
+
+if(pass!==confirm){
+
+alert("Passwords do not match.");
+
+e.preventDefault();
+
+return;
+
+}
+
+document.getElementById("loader").style.display="block";
+
+document.getElementById("registerBtn").style.display="none";
+
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/register.js"></script>
 
 </body>
+
 </html>
