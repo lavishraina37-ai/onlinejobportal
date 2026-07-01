@@ -1,74 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Online Job Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
+<!-- ================= NAVIGATION ================= -->
 
-        <div class="logo">
-            JobPortal
-        </div>
+<nav class="navbar">
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
+    <div class="logo">
 
-    </nav>
+        <i class="fa-solid fa-briefcase"></i>
 
-    <section class="hero">
+        JobPortal
 
-        <div class="hero-content">
+    </div>
 
-            <h1>Find Your Dream Job Today</h1>
+    <ul class="nav-links">
 
-            <p>
-                Search thousands of jobs from top companies.
-                Apply instantly and grow your career.
-            </p>
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="jobs.html">Jobs</a></li>
+
+        <li><a href="apply.html">Apply</a></li>
+
+        <li><a href="my-applications.html">My Applications</a></li>
+
+        <li><a href="login.html">Login</a></li>
+
+        <li><a href="register.html">Register</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <img id="banner"
+         src="images/job1.jpg"
+         class="slider-image"
+         alt="Job Portal">
+
+    <div class="hero-content">
+
+        <h1 id="title">
+
+            Find Your Dream Job Today
+
+        </h1>
+
+        <p>
+
+            Search thousands of verified jobs from India's top companies.
+
+            Apply online and build your successful career.
+
+        </p>
+
+        <div class="hero-buttons">
 
             <a href="jobs.html" class="btn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
                 Explore Jobs
+
+            </a>
+
+            <a href="apply.html" class="btn apply-btn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Apply Now
+
             </a>
 
         </div>
 
-    </section>
+    </div>
 
-    <section class="features">
+</section>
 
-        <div class="card">
-            <h2>1000+</h2>
-            <p>Job Openings</p>
-        </div>
+<!-- ================= FEATURES ================= -->
 
-        <div class="card">
-            <h2>500+</h2>
-            <p>Companies</p>
-        </div>
+<section class="features">
 
-        <div class="card">
-            <h2>24/7</h2>
-            <p>Support</p>
-        </div>
+<div class="card">
 
-    </section>
+<i class="fa-solid fa-briefcase fa-3x"></i>
 
-    <footer>
+<h2>1000+</h2>
 
-        <p>
-            © 2026 Online Job Portal | Developed by Lavish Raina
-        </p>
+<p>Available Jobs</p>
 
-    </footer>
+</div>
 
+<div class="card">
+
+<i class="fa-solid fa-building fa-3x"></i>
+
+<h2>500+</h2>
+
+<p>Top Companies</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-users fa-3x"></i>
+
+<h2>15000+</h2>
+
+<p>Registered Candidates</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-headset fa-3x"></i>
+
+<h2>24/7</h2>
+
+<p>Customer Support</p>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="about">
+
+<h2>Why Choose Our Portal?</h2>
+
+<div class="about-container">
+
+<div>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<h3>Easy Job Search</h3>
+
+<p>
+
+Search jobs by category,
+
+company and location.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+<h3>Quick Apply</h3>
+
+<p>
+
+Apply for jobs within
+
+seconds.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Verified Companies</h3>
+
+<p>
+
+All employers are
+
+verified and trusted.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= JOB CATEGORY ================= -->
+
+<section class="category-section">
+
+<h2>
+
+Browse Jobs
+
+</h2>
+
+<select id="category" onchange="showJobs()">
+
+<option>Select Category</option>
+
+<option>IT</option>
+
+<option>Bank</option>
+
+<option>Government</option>
+
+<option>Teaching</option>
+
+<option>Marketing</option>
+
+</select>
+
+<div id="jobs">
+
+</div>
+
+</section>
+
+<!-- ================= JAVASCRIPT FEATURES ================= -->
+
+<section class="welcome">
+
+<h2>
+
+Interactive Features
+
+</h2>
+
+<input
+
+type="text"
+
+id="username"
+
+placeholder="Enter Your Name"
+
+onkeyup="typing()">
+
+<br><br>
+
+<button onclick="saveCookie()">
+
+Remember Me
+
+</button>
+
+<button onclick="readCookie()">
+
+Read Cookie
+
+</button>
+
+<button onclick="generateRegNo()">
+
+Generate Registration No
+
+</button>
+
+<button onclick="changeTitle()">
+
+Change Title
+
+</button>
+
+<button onclick="demoPrompt()">
+
+Prompt
+
+</button>
+
+<button onclick="demoConfirm()">
+
+Confirm
+
+</button>
+
+<br><br>
+
+<input
+
+type="text"
+
+id="regNo"
+
+readonly
+
+placeholder="Registration Number">
+
+<p
+
+id="msg"
+
+onmouseover="over()">
+
+Move your mouse here
+
+</p>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+<h2>
+
+Subscribe for Latest Job Alerts
+
+</h2>
+
+<input
+
+type="email"
+
+placeholder="Enter Email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Online Job Portal
+
+</p>
+
+<p>
+
+Developed by Lavish Sharma
+
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
