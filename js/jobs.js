@@ -76,6 +76,13 @@ async function loadJobs() {
         `;
     });
 }
+function openApplyForm(jobId){
+
+    localStorage.setItem("jobId", jobId);
+
+    window.location.href =
+    "apply.html";
+}
 
 async function applyJob(jobId) {
 
